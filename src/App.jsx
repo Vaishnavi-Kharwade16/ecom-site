@@ -4,6 +4,12 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+const MOCK_PRODUCTS = [
+  { id: 1, name: "Wireless Headphones", price: 2999, description: "High-quality sound with noise cancellation." },
+  { id: 2, name: "Minimalist Smartwatch", price: 4500, description: "Track your fitness and notifications seamlessly." },
+  { id: 3, name: "Mechanical Keyboard", price: 3200, description: "Tactile switches with vibrant RGB backlighting." }
+];
+
 function App() {
   const [count, setCount] = useState(0)
 
