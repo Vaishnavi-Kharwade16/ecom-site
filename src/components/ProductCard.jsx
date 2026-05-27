@@ -59,7 +59,7 @@ const ProductCard = ({ product }) => {
         />
 
         {/* Hover Overlay with Quick Add */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={handleAddToCart}
             aria-label="Add to cart"
@@ -147,16 +147,18 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Add to Cart Button */}
-        <button
-          onClick={handleAddToCart}
-          className={`mt-3 w-full py-2.5 rounded-xl text-sm font-bold tracking-wide border-2 transition-all duration-200 cursor-pointer
-            ${addedFeedback
-              ? "bg-green-500 border-green-500 text-white"
-              : "bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
-            }`}
-        >
-          {addedFeedback ? "✓ Added to Cart" : "Add to Cart"}
-        </button>
+        <div className="mt-auto pt-3">
+          <button
+            onClick={handleAddToCart}
+            className={`w-full py-2.5 rounded-xl text-sm font-bold tracking-wide border-2 transition-all duration-200 cursor-pointer
+              ${addedFeedback
+                ? "bg-green-500 border-green-500 text-white"
+                : "bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
+              }`}
+          >
+            {addedFeedback ? "✓ Added to Cart" : "Add to Cart"}
+          </button>
+        </div>
       </div>
     </article>
   );

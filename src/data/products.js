@@ -1,0 +1,48 @@
+const products = [
+  {
+    id: "1",
+    name: "Minimal Leather Watch",
+    price: 189.99,
+    originalPrice: 249.99,
+    category: "Accessories",
+    rating: 4,
+    reviews: 128,
+    badge: "Bestseller",
+    image: "src/assets/watch.jpg",
+  },
+  {
+    id: "2",
+    name: "Wireless Noise-Cancelling Headphones",
+    price: 299.00,
+    originalPrice: null,
+    category: "Electronics",
+    rating: 5,
+    reviews: 342,
+    badge: "New",
+    image: "src/assets/headphone.jpg",
+  },
+  {
+    id: "3",
+    name: "Ceramic Pour-Over Coffee Set",
+    price: 78.50,
+    originalPrice: null,
+    category: "Kitchen",
+    rating: 5,
+    reviews: 203,
+    badge: "Popular",
+    image: "src/assets/coffee.jpg",
+  },
+  {
+    id: "4",
+    name: "Merino Wool Beanie",
+    price: 35.00,
+    originalPrice: 50.00,
+    category: "Apparel",
+    rating: 4,
+    reviews: 89,
+    badge: null,
+    image: "src/assets/wool_beanie.jpg",
+  },
+];
+
+export default products;
