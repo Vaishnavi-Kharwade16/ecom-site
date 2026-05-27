@@ -63,7 +63,7 @@ const Navbar = () => {
               </div>
             ) : (
               <Link 
-                to="/login" 
+                to="/auth" 
                 className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 font-medium transition"
               >
                 Sign In
@@ -115,7 +115,7 @@ const Navbar = () => {
               </>
             ) : (
               <Link 
-                to="/login" 
+                to="/auth" 
                 className="block bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 font-medium text-center"
                 onClick={() => setMobileOpen(false)}
               >
