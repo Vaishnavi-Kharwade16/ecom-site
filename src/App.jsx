@@ -79,6 +79,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Home from "./pages/Home";
 import CartPage from "./pages/CartPage";
 import Auth from "./pages/Auth";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
              <Route path="/auth" element={<Auth />} /> 
           </Routes>
+          <Footer/>
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>
