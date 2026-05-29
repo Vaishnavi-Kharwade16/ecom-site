@@ -29,7 +29,7 @@ const Auth = () => {
     await new Promise((r) => setTimeout(r, 400));
 
     if (tab === "signin") {
-      const res = signIn({ email: form.email, password: form.password });
+      const res = await signIn({ email: form.email, password: form.password });
       if (!res.success) { setError(res.error); setLoading(false); return; }
       navigate("/");
     } else {
@@ -39,7 +39,7 @@ const Auth = () => {
       if (form.password.length < 6) {
         setError("Password must be at least 6 characters."); setLoading(false); return;
       }
-      const res = signUp({ name: form.name, email: form.email, password: form.password });
+      const res = await signUp({ name: form.name, email: form.email, password: form.password });
       if (!res.success) { setError(res.error); setLoading(false); return; }
       setSuccess("Account created! Redirecting…");
       setTimeout(() => navigate("/"), 1000);

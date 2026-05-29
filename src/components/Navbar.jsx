@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const { totalItems } = useCart();
-  const { user, signOut } = useAuth();
+  const { user, signOut, isAdmin } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
@@ -35,6 +35,14 @@ const Navbar = () => {
             >
               Cart
             </Link>
+            {isAdmin && (
+              <Link 
+                to="/insert-product" 
+                className={`text-gray-700 hover:text-gray-900 font-medium ${isActive("/insert-product") ? "text-gray-900 border-b-2 border-gray-900" : ""}`}
+              >
+                Add Product
+              </Link>
+            )}
             
             {/* Cart Icon with Badge */}
             <Link to="/cart" className="relative p-2">
@@ -103,6 +111,15 @@ const Navbar = () => {
             >
               Cart ({totalItems})
             </Link>
+            {isAdmin && (
+              <Link 
+                to="/insert-product" 
+                className="block text-gray-700 hover:text-gray-900 font-medium py-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                Add Product
+              </Link>
+            )}
             {user ? (
               <>
                 <span className="block text-gray-700 py-2">Hi, {user.name}</span>
