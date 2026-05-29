@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   const { totalItems } = useCart();
-  const { user, signOut } = useAuth();
+  const { user, signOut, isAdmin} = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
@@ -49,6 +49,21 @@ const Navbar = () => {
                 </span>
               )}
             </Link>
+            
+          <Link
+             to="/favorites"
+             className={`text-gray-700 hover:text-gray-900 font-medium ${isActive("/favorites") ? "text-gray-900 border-b-2 border-gray-900" : ""}`}
+              >
+                Favorites
+              </Link>
+             {isAdmin && (
+  <Link
+    to="/admin"
+    className={`text-gray-700 hover:text-gray-900 font-medium ${isActive("/admin") ? "text-gray-900 border-b-2 border-gray-900" : ""}`}
+  >
+    Admin
+  </Link>
+)}
 
             {/* Auth Section */}
             {user ? (
@@ -103,6 +118,23 @@ const Navbar = () => {
             >
               Cart ({totalItems})
             </Link>
+            <Link
+                to="/favorites"
+                  className="block text-gray-700 hover:text-gray-900 font-medium py-2"
+                   onClick={() => setMobileOpen(false)}
+                        >
+                         Favorites
+                          </Link>
+{isAdmin && (
+  <Link
+    to="/admin"
+    className="block text-gray-700 hover:text-gray-900 font-medium py-2"
+    onClick={() => setMobileOpen(false)}
+  >
+    Admin
+  </Link>
+)}
+
             {user ? (
               <>
                 <span className="block text-gray-700 py-2">Hi, {user.name}</span>

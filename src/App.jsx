@@ -80,6 +80,8 @@ import Home from "./pages/Home";
 import CartPage from "./pages/CartPage";
 import Auth from "./pages/Auth";
 import Footer from "./components/Footer";
+import AdminInsert from "./pages/AdminInsert";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
@@ -90,6 +92,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<CartPage />} />
              <Route path="/auth" element={<Auth />} /> 
+             <Route path="/admin" element={<AdminInsert />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
           <Footer/>
         </CartProvider>
