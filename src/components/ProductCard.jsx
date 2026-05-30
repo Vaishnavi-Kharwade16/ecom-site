@@ -8,7 +8,8 @@ const ProductCard = ({ product }) => {
   const [addedFeedback, setAddedFeedback] = useState(false);
   const [ripple, setRipple] = useState(false);
 
-  const { id, name, price, originalPrice, image, category, rating, reviews, badge } = product;
+  const { name, price, originalPrice, image, category, rating, reviews, badge } = product;
+  const id = product.id || product._id;
 
   const favorited = isFavorite?.(id);
   const discount = originalPrice
