@@ -222,6 +222,9 @@ const Navbar = () => {
             >
               Favorites
             </Link>
+            <Link to="/orders" className={`text-gray-700 hover:text-gray-900 font-medium ${isActive("/orders") ? "text-gray-900 border-b-2 border-gray-900" : ""}`}>
+               Orders
+              </Link>
 
             {isAdmin && (
               <Link
@@ -306,6 +309,9 @@ const Navbar = () => {
             >
               Favorites
             </Link>
+            <Link to="/orders" className="block text-gray-700 hover:text-gray-900 font-medium py-2" onClick={() => setMobileOpen(false)}>
+                Orders
+                    </Link>
             {isAdmin && (
               <Link
                 to="/admin"

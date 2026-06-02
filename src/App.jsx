@@ -7,6 +7,8 @@ import Auth from "./pages/Auth";
 import InsertProduct from "./pages/InsertProduct";
 import Footer from "./components/Footer";
 import Favorites from "./pages/Favorites";
+import OrderHistory from "./pages/OrderHistory";
+
 
 function App() {
   return (
@@ -15,13 +17,16 @@ function App() {
         <CartProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+            
             <Route path="/cart" element={<CartPage />} />
              <Route path="/auth" element={<Auth />} /> 
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/admin" element={<InsertProduct />} />
+            <Route path="/orders" element={<OrderHistory />} />
           
           </Routes>
           <Footer />
+          
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>

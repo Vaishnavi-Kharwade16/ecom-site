@@ -29,10 +29,18 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem(FAVS_KEY, JSON.stringify(favorites));
   }, [favorites]);
 
-  const saveSession = ({ user, token }) => {
-    const session = { user, token };
-    setSession(session);
-    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+ const saveSession = (data) => {
+    console.log("Exact backend data arrived:", data);
+    const user = data?.user || data?.data?.user || null;
+    const token = data?.token || data?.data?.token || null;
+
+    if (user && token) {
+      const session = { user, token };
+      setSession(session);
+      localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+    } else {
+      console.error("Auth Error: User or Token missing in response!", data);
+    }
   };
 
   const getSession = () => {

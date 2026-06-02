@@ -13,6 +13,8 @@ app.use(express.json());
 
 const startServer = async () => {
   await connectDB();
+  const orderRoutes = require("./routes/orderRoutes");
+app.use("/api/orders", orderRoutes);
 
   // Routes
   app.use("/api/auth", authRoutes);

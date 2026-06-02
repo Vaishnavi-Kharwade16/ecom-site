@@ -84,6 +84,7 @@ import Navbar from "../components/Navbar";
 import Slideshow from "../components/Slideshow";
 import ProductCard from "../components/ProductCard";
 import { useAuth } from "../context/AuthContext";
+import OrderHistory from "./OrderHistory";
 
 const Home = () => {
   const { isAdmin } = useAuth();
