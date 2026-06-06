@@ -4,6 +4,7 @@ require("dotenv").config();
 const connectDB = require("./config/db");
 const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use("/api/orders", orderRoutes);
   // Routes
   app.use("/api/auth", authRoutes);
   app.use("/api/products", productRoutes);
+  app.use("/api/users", userRoutes);
 
   // Health check
   app.get("/", (req, res) => {
