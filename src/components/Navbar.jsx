@@ -206,7 +206,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-gray-900">
-            ShopZone
+             Arcè
           </Link>
 
           {/* Desktop Navigation */}
