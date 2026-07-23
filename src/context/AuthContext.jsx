@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
 
   const signUp = async ({ name, email, password }) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", { name, email, password });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/signup`, { name, email, password });
       saveSession(res.data);
       return { success: true };
     } catch (err) {
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
 
   const signIn = async ({ email, password }) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signin", { email, password });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/signin`, { email, password });
       saveSession(res.data);
       return { success: true };
     } catch (err) {

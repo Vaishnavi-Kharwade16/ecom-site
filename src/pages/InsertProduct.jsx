@@ -40,7 +40,7 @@ const InsertProduct = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/products",
+       `${import.meta.env.VITE_API_URL}/api/products`,
         {
           ...formData,
           price: Number(formData.price),
