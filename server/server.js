@@ -9,7 +9,12 @@ const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ecom-site-pbb5.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const startServer = async () => {
