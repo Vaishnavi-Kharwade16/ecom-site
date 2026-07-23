@@ -139,7 +139,7 @@ JWT_SECRET=your_secret_key
 If needed, create a **.env** file in the frontend root.
 
 ```env
-VITE_API_URL=http://localhost:5000
+VITE_API_URL=`${import.meta.env.VITE_API_URL}`
 ```
 
 ---

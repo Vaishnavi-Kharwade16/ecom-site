@@ -92,6 +92,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+     console.log("API URL:", import.meta.env.VITE_API_URL);
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((res) => {
