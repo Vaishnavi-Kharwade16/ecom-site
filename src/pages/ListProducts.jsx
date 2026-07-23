@@ -37,7 +37,7 @@ const ListProducts = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get`${import.meta.env.VITE_API_URL}`;
       setProducts(res.data);
     } catch (err) {
       console.error(err);
@@ -79,7 +79,7 @@ const ListProducts = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/products/${editing._id}`,
+        `${import.meta.env.VITE_API_URL}/api/products/${editing._id}`,
         {
           ...formData,
           price: Number(formData.price),
@@ -107,7 +107,7 @@ const ListProducts = () => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStatus({ type: "success", message: "Product deleted successfully." });

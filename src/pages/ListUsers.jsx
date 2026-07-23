@@ -29,7 +29,7 @@ const ListUsers = () => {
     const loadUsers = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:5000/api/users", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/users`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers(res.data);
@@ -47,7 +47,7 @@ const ListUsers = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/users", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -86,7 +86,7 @@ const ListUsers = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/users/${editing._id}`,
+        `${import.meta.env.VITE_API_URL}/api/users/${editing._id}`,
         {
           name: formData.name,
           email: formData.email,
@@ -111,7 +111,7 @@ const ListUsers = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStatus({ type: "success", message: "User deleted successfully." });
