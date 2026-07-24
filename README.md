@@ -12,9 +12,7 @@ https://ecom-site-r9xi.vercel.app
 ### Backend API
 https://ecom-site-4.onrender.com
 
-### Test API
 
-GET https://ecom-site-4.onrender.com/api/products
 
 ## 🚀 Tech Stack
 
