@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://ecom-site-pbb5.vercel.app",
+    origin: "https://ecom-site-r9xi.vercel.app",
     credentials: true,
   })
 );
