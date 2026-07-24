@@ -1,8 +1,20 @@
-# 🛒 Ecom-Site
+# 🛒 E-Commerce Website
 
 A modern full-stack E-Commerce web application built using the MERN stack. The application provides a seamless shopping experience with secure authentication, role-based admin access, product management, cart functionality, wishlist, and order management.
 
 ---
+
+## Live Demo
+
+### Frontend
+https://ecom-site-r9xi.vercel.app
+
+### Backend API
+https://ecom-site-4.onrender.com
+
+### Test API
+
+GET https://ecom-site-4.onrender.com/api/products
 
 ## 🚀 Tech Stack
 
@@ -184,14 +196,7 @@ cd server
 node seed.js
 ```
 
-Default Admin Credentials
 
-```
-Email:
-admin
-
-Password:
-admin
 ```
 
 ---
@@ -250,23 +255,7 @@ The application uses:
 
 ---
 
-# 🖥️ Screenshots
 
-Add screenshots here after deployment.
-
-```
-Home Page
-
-Login Page
-
-Admin Dashboard
-
-Cart
-
-Wishlist
-
-Order History
-```
 
 ---
 
@@ -299,7 +288,7 @@ Order History
 | Name | Role |
 |------|------|
 | **Vaishnavi Kharwade** | Frontend Developer |
-| **Vansh** | Backend Developer |
+| **Vansh Bhagat** | Backend Developer |
 
 ---
 
