@@ -84,23 +84,31 @@ import Navbar from "../components/Navbar";
 import Slideshow from "../components/Slideshow";
 import ProductCard from "../components/ProductCard";
 import { useAuth } from "../context/AuthContext";
-import OrderHistory from "./OrderHistory";
-
 const Home = () => {
   const { isAdmin } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-     console.log("API URL:", import.meta.env.VITE_API_URL);
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((res) => {
-        setProducts(res.data);
-        setLoading(false);
+        const payload = res.data;
+        const productList = Array.isArray(payload)
+          ? payload
+          : Array.isArray(payload?.products)
+            ? payload.products
+            : Array.isArray(payload?.data)
+              ? payload.data
+              : [];
+
+        setProducts(productList);
       })
       .catch((err) => {
         console.error("Error fetching products:", err);
+        setProducts([]);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, []);
