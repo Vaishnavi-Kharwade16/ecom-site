@@ -90,8 +90,10 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL || "https://ecom-site-4.onrender.com";
+
     axios
-      .get(`${import.meta.env.VITE_API_URL}/api/products`)
+      .get(`${apiUrl.replace(/\/$/, "")}/api/products`)
       .then((res) => {
         const payload = res.data;
         const productList = Array.isArray(payload)
