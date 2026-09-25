@@ -11,7 +11,15 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://ecom-site-r9xi.vercel.app",
+    origin: (origin, callback) => {
+      const allowedOrigin =
+        !origin ||
+        origin === "https://ecom-site-r9xi.vercel.app" ||
+        origin.endsWith(".v0.build") ||
+        origin.endsWith(".vercel.app");
+
+      callback(null, allowedOrigin);
+    },
     credentials: true,
   })
 );
